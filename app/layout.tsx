@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     'weekend trips India', 'travel with strangers', 'Pondicherry', 'Ooty',
     'Manali', 'Varkala', 'Goa travel', 'smart travel', 'Tripknot'
   ],
-  authors: [{ name: 'Tripknot', url: 'https://tripknot.app' }],
+  authors: [{ name: 'Tripknot', url: 'https://tripknot.in' }],
   creator: 'Tripknot',
-  metadataBase: new URL('https://tripknot.app'),
+  metadataBase: new URL('https://tripknot.in'),
   alternates: {
     canonical: '/',
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: 'Tripknot — Travel smarter. Experience more.',
     description:
       'Smart itineraries, hidden gems, weekend escapes, and trips with like-minded travelers — all in one elegant app.',
-    url: 'https://tripknot.app',
+    url: 'https://tripknot.in',
     siteName: 'Tripknot',
     locale: 'en_IN',
     images: [
