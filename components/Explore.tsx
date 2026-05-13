@@ -15,7 +15,7 @@ export default function Explore() {
     <section id="explore" className="py-[120px]" data-screen-label="Explore Packages">
       <div className="container-x">
         <SectionHead eyebrow="Explore packages" title="Discover curated escapes." sub="From weekend getaways to slow mountain retreats — explore handpicked trips designed around mood, pace, and time of year." />
-        <div className="grid gap-4 mt-9 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center">
+        <div className="grid gap-4 mt-9 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {cats.map((c, i) => (
             <motion.div
               key={i}
@@ -24,7 +24,7 @@ export default function Explore() {
               viewport={{ once: true, margin: '-50px' }}
               transition={{ delay: i * 0.06, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -4 }}
-              className="relative h-[200px] md:h-[280px] lg:h-[340px] rounded-[22px] overflow-hidden cursor-pointer text-white group w-full max-md:[&:last-child]:col-span-2 max-md:[&:last-child]:max-w-[calc(50%-8px)]"
+              className="relative h-[200px] md:h-[280px] lg:h-[340px] rounded-[22px] overflow-hidden cursor-pointer text-white group w-full max-md:[&:last-child]:col-span-2"
             >
               <Image
                 src={c.img}
