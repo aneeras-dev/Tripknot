@@ -72,6 +72,7 @@ export const metadata: Metadata = {
 };
 
 const GTM_ID = 'GTM-NJSXTBFC';
+const GA_ID = 'G-8GMEQ6NR82';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -83,6 +84,13 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','${GTM_ID}');`}
+        </Script>
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script id="ga-script" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_ID}');`}
         </Script>
       </head>
       <body>
