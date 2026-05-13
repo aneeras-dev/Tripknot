@@ -115,7 +115,9 @@ function FloatCard1() {
   return (
     <>
       <div className="flex items-center gap-3">
-        <div className="w-[52px] h-[52px] rounded-[16px] flex-none" style={{ background: 'linear-gradient(145deg,#d9917a,#7b3a1f)' }} />
+        <div className="w-[52px] h-[52px] rounded-[16px] flex-none relative overflow-hidden">
+          <Image src="/images/pondicherry.png" alt="Pondicherry" fill sizes="52px" className="object-cover" />
+        </div>
         <div>
           <div className="font-semibold text-[14.5px] leading-snug">Pondicherry Heritage Walk</div>
           <div className="text-[12px] text-muted mt-[3px]">3 days · From ₹5,500</div>
@@ -146,9 +148,11 @@ function FloatCard2() {
       <div className="font-semibold text-[16px] leading-snug">Sunset at Promenade</div>
       <div className="text-[12px] text-muted mt-1 mb-3 leading-relaxed">Walk along Rock Beach — best between 5–6pm</div>
       <div className="flex gap-2">
-        <div className="h-[44px] flex-1 rounded-[10px]" style={{ background: 'linear-gradient(135deg,#e0a880,#6f3b1a)' }} />
-        <div className="h-[44px] flex-1 rounded-[10px]" style={{ background: 'linear-gradient(135deg,#cf8a72,#7b3a1f)' }} />
-        <div className="h-[44px] flex-1 rounded-[10px]" style={{ background: 'linear-gradient(135deg,#a25735,#42180a)' }} />
+        {['/images/itinenary/promenade.jpeg', '/images/itinenary/rockbeach.jpg', '/images/beach.JPG'].map((src, i) => (
+          <div key={i} className="h-[44px] flex-1 rounded-[10px] relative overflow-hidden">
+            <Image src={src} alt="" fill sizes="80px" className="object-cover" />
+          </div>
+        ))}
       </div>
     </>
   );
@@ -163,9 +167,11 @@ function FloatCard3() {
           <div className="font-semibold text-[16px] mt-1.5">Auroville → Paradise Beach</div>
         </div>
         <div className="flex items-center">
-          <span className="w-7 h-7 rounded-full border-2 border-white" style={{ background: 'linear-gradient(135deg,#5BC1C2,#0D7A7B)' }} />
-          <span className="w-7 h-7 rounded-full border-2 border-white -ml-2" style={{ background: 'linear-gradient(135deg,#E0A98C,#B84A32)' }} />
-          <span className="w-7 h-7 rounded-full border-2 border-white -ml-2" style={{ background: 'linear-gradient(135deg,#C7D2A0,#7d8b54)' }} />
+          {[1, 2, 3].map((n, k) => (
+            <div key={n} className={`w-7 h-7 rounded-full border-2 border-white overflow-hidden relative flex-shrink-0 ${k ? '-ml-2' : ''}`}>
+              <Image src={`/images/profile/profile-${n}.png`} alt="" fill sizes="28px" className="object-cover" />
+            </div>
+          ))}
         </div>
       </div>
       <div className="flex gap-2 mt-3.5">

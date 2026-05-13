@@ -5,8 +5,8 @@ import { SectionHead } from './Explore';
 
 const items = [
   { span: 'lg:col-span-6', h: 'h-[360px]', k: 'Hidden gems', t: "Places you'd only know from someone local", img: '/images/hiddengem.JPG' },
-  { span: 'lg:col-span-3', h: 'h-[280px]', k: 'Stays', t: 'Best places to stay', img: '/images/stay.jpg' },
-  { span: 'lg:col-span-3', h: 'h-[280px]', k: 'Food', t: 'Cafes & street food', img: '/images/cafe.JPG' },
+  { span: 'lg:col-span-3', h: 'h-[360px]', k: 'Stays', t: 'Best places to stay', img: '/images/stay.jpg' },
+  { span: 'lg:col-span-3', h: 'h-[360px]', k: 'Food', t: 'Cafes & street food', img: '/images/cafe.JPG' },
   { span: 'lg:col-span-4', h: 'h-[280px]', k: 'Golden hour', t: 'Sunset spots', img: '/images/sunset.JPEG' },
   { span: 'lg:col-span-4', h: 'h-[280px]', k: '2 night ideas', t: 'Weekend escapes', img: '/images/weekend.JPG' },
   { span: 'lg:col-span-4', h: 'h-[280px]', k: 'Local culture', t: 'Experiences with people', img: '/images/local.JPG' }
@@ -14,7 +14,7 @@ const items = [
 
 export default function ExperienceGrid() {
   return (
-    <section className="py-[120px] bg-charcoal text-[#F0EBE3]" data-screen-label="Experience grid">
+    <section className="pt-4 md:pt-2 pb-[120px] bg-charcoal text-[#F0EBE3]" data-screen-label="Experience grid">
       <div className="container-x">
         <SectionHead light eyebrow="A different way to see a place" title="More than the obvious." sub="A growing library of editorial picks — the kind a local friend would send you on a quiet afternoon." />
         <div className="grid grid-cols-1 md:grid-cols-12 gap-[18px]">

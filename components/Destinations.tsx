@@ -31,7 +31,7 @@ export default function Destinations() {
         </div>
       </div>
       <div className="container-x">
-        <div ref={scroller} className="flex gap-[18px] overflow-x-auto snap-x snap-mandatory px-7 pb-6 -mx-7 no-scrollbar">
+        <div ref={scroller} className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-6 no-scrollbar">
           {dests.map((d, i) => (
             <motion.div
               key={i}
@@ -40,14 +40,14 @@ export default function Destinations() {
               viewport={{ once: true, margin: '-50px' }}
               transition={{ delay: i * 0.06, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -8 }}
-              className="flex-none w-[340px] h-[460px] rounded-[24px] overflow-hidden relative snap-start bg-[#222] text-white cursor-pointer"
+              className="flex-none w-[260px] h-[360px] md:w-[340px] md:h-[460px] rounded-[24px] overflow-hidden relative snap-start bg-[#222] text-white cursor-pointer"
             >
               <Image src={d.img} alt={d.t} fill className="object-cover" sizes="340px" />
               <span className="absolute inset-0" style={{ background: 'linear-gradient(180deg,rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.75) 100%)' }} />
               <div className="absolute top-5 left-5 flex items-center gap-2 text-[11.5px] tracking-[0.18em] uppercase font-semibold z-[2] before:content-[''] before:w-6 before:h-px before:bg-white">{d.idx}</div>
-              <div className="absolute top-5 right-5 bg-white/15 backdrop-blur px-2.5 py-1.5 rounded-full text-[11px] font-semibold z-[2]">{d.pin}</div>
+              <div className="hidden md:block absolute top-5 right-5 bg-white/15 backdrop-blur px-2.5 py-1.5 rounded-full text-[11px] font-semibold z-[2]">{d.pin}</div>
               <div className="absolute left-6 right-6 bottom-6 z-[2]">
-                <div className="font-display text-[36px] tracking-[-0.03em] leading-none mb-2">{d.t}</div>
+                <div className="font-display text-[26px] md:text-[36px] tracking-[-0.03em] leading-none mb-2">{d.t}</div>
                 <div className="text-[13px] opacity-85 leading-[1.4]" style={{ color: '#D3D5C3' }}>{d.s}</div>
               </div>
             </motion.div>

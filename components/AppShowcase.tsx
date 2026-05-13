@@ -6,10 +6,25 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const phones = [
-  { src: '/screens/screen-itinerary.png', t: 'Build the day', s: 'Add places, drag to reorder', tall: false },
-  { src: '/screens/screen-auroville.png', t: 'Discover deeper', s: 'Editorial place pages', tall: true },
-  { src: '/screens/screen-temple.png', t: 'Nearby, right now', s: "What's interesting around you", tall: false },
-  { src: '/screens/screen-explore.png', t: 'Curated trips', s: 'Join or get inspired', tall: false }
+  {
+    src: "/screens/screen-explore.png",
+    t: "Curated trips",
+    s: "Join or get inspired",
+    tall: false,
+  },
+  {
+    src: "/screens/screen-auroville.png",
+    t: "Discover deeper",
+    s: "Editorial place pages",
+    tall: true,
+  },
+  {
+    src: "/screens/screen-temple.png",
+    t: "Nearby, right now",
+    s: "What's interesting around you",
+    tall: false,
+  },
+
 ];
 
 export default function AppShowcase() {

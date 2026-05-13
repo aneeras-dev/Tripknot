@@ -27,7 +27,6 @@ export default function Nav() {
           ))}
         </div>
         <div className="flex items-center gap-[14px]">
-          <a href="#" className="btn btn-ghost hidden sm:inline-flex">Sign in</a>
           <a href="#cta" className="btn btn-primary">Get the app</a>
         </div>
       </div>
