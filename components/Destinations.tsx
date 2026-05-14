@@ -30,8 +30,8 @@ export default function Destinations() {
           </div>
         </div>
       </div>
-      <div className="container-x">
-        <div ref={scroller} className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-6 no-scrollbar">
+      <div className="container-x mt-4">
+        <div ref={scroller} className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-6 pt-3 no-scrollbar">
           {dests.map((d, i) => (
             <motion.div
               key={i}

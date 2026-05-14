@@ -65,11 +65,10 @@ export default function AppShowcase() {
             <p className="text-[18px] leading-[1.5] max-w-[560px] mx-auto" style={{ color: '#A8A99F' }}>A calm interface that gets out of the way — itinerary, hidden gems, nearby picks, and the people you're traveling with. All in one place.</p>
           </motion.div>
 
-          <div ref={ref} className="flex justify-center gap-8 items-end relative z-[2] flex-wrap">
+          <div ref={ref} className="flex justify-center gap-10 items-end relative z-[2] flex-wrap">
             {phones.map((p, i) => (
-              <div key={i} className="phone-tilt">
-                <div className="flex-none rounded-[38px] p-2 border border-white/[0.06] relative" style={{
-                  width: p.tall ? 280 : 240,
+              <div key={i} className={`phone-tilt ${i !== 1 ? 'hidden md:block' : ''}`}>
+                <div className={`flex-none rounded-[38px] p-2 border border-white/[0.06] relative ${p.tall ? 'w-[200px] md:w-[280px]' : 'w-[240px]'}`} style={{
                   transform: p.tall ? 'translateY(-30px)' : undefined,
                   background: 'linear-gradient(180deg,#1a2120,#0b100f)',
                   boxShadow: '0 60px 120px -40px rgba(0,0,0,0.8), 0 4px 0 rgba(255,255,255,0.04) inset'

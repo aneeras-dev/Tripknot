@@ -40,9 +40,9 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
   icons: {
-    icon: '/icon.png',
-    shortcut: '/icon.png',
-    apple: '/icon.png',
+    icon: '/tripknot-icon.png',
+    shortcut: '/tripknot-icon.png',
+    apple: '/tripknot-icon.png',
   },
   openGraph: {
     title: 'Tripknot — Travel smarter. Experience more.',
