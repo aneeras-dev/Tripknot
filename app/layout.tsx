@@ -5,6 +5,47 @@ import './globals.css';
 import SmoothScroll from '@/components/SmoothScroll';
 import Cursor from '@/components/Cursor';
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://tripknot.in/#organization',
+      name: 'Tripknot',
+      url: 'https://tripknot.in',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://tripknot.in/tripknot-icon.png',
+      },
+      sameAs: [
+        'https://twitter.com/tripknotapp',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://tripknot.in/#website',
+      url: 'https://tripknot.in',
+      name: 'Tripknot',
+      description: 'Smart itineraries, hidden gems, weekend escapes, and trips with like-minded travelers — all in one elegant app.',
+      publisher: { '@id': 'https://tripknot.in/#organization' },
+    },
+    {
+      '@type': 'MobileApplication',
+      '@id': 'https://tripknot.in/#app',
+      name: 'Tripknot',
+      description: 'Smart itineraries, hidden gems, weekend escapes, and trips with like-minded travelers — all in one elegant app.',
+      applicationCategory: 'TravelApplication',
+      operatingSystem: 'iOS, Android',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'INR',
+      },
+      publisher: { '@id': 'https://tripknot.in/#organization' },
+    },
+  ],
+};
+
 const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
   variable: '--font-bricolage',
@@ -32,7 +73,7 @@ export const metadata: Metadata = {
   creator: 'Tripknot',
   metadataBase: new URL('https://tripknot.in'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://tripknot.in/',
   },
   robots: {
     index: true,
@@ -78,6 +119,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${bricolage.variable} ${figtree.variable}`}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Script id="gtm-script" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
