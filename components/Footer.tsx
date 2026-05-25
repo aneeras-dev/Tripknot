@@ -2,10 +2,19 @@ import Image from 'next/image';
 
 const socialLinks = [
   {
-    label: 'Instagram',
-    href: '#',
+    label: "Instagram",
+    href: "https://www.instagram.com/tripknot.in?igsh=Y2hxcXpnbW1hYjA0",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
         <circle cx="12" cy="12" r="4" />
         <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
@@ -13,23 +22,15 @@ const socialLinks = [
     ),
   },
   {
-    label: 'YouTube',
-    href: '#',
+    label: "Linkedin",
+    href: "https://www.linkedin.com/company/tripknot/",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.2 2.8 12 2.8 12 2.8s-4.2 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.3v2c0 2.1.3 4.2.3 4.2S1.3 19.5 2.2 20.3c1.1 1.2 2.6 1.1 3.3 1.2C7.6 21.7 12 21.7 12 21.7s4.2 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.1.3-4.2v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z" />
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
       </svg>
     ),
   },
-  {
-    label: 'X / Twitter',
-    href: '#',
-    icon: (
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-      </svg>
-    ),
-  },
+ 
 ];
 
 export default function Footer() {
@@ -47,21 +48,21 @@ export default function Footer() {
     {
       h: "Legal",
       links: [
-        { label: "Privacy Policy", href: "/legal/privacy-policy.pdf" },
-        { label: "Terms of Use", href: "/legal/terms-of-Use.pdf" },
-        { label: "Data Privacy Policy", href: "/legal/data-privacy.pdf" },
-        { label: "Business Listing Terms", href: "/legal/business.pdf" },
-        { label: "Terms and Conditions", href: "/legal/terms&conditons.pdf" },
-        { label: "EULA", href: "/legal/eula.pdf" },
-        { label: "Cookie and Tracking Policy", href: "/legal/Cookie.pdf" },
+        { label: "Privacy Policy", href: "/legal/privacy-policy" },
+        { label: "Terms of Use", href: "/legal/terms-of-use" },
+        { label: "Data Privacy Policy", href: "/legal/data-privacy" },
+        { label: "Business Listing Terms", href: "/legal/business-listing-terms" },
+        { label: "Terms and Conditions", href: "/legal/terms-and-conditions" },
+        { label: "EULA", href: "/legal/eula" },
+        { label: "Cookie and Tracking Policy", href: "/legal/cookie-policy" },
       ],
     },
     {
       h: "Contact",
       links: [
         { label: "hello@tripknot.in", href: "mailto:hello@tripknot.in" },
-        { label: "Help center", href: "#" },
-        { label: "Partners", href: "#" },
+        { label: "Help center", href: "/help" },
+        
       ],
     },
   ];
@@ -79,7 +80,7 @@ export default function Footer() {
               <ul className="list-none p-0 m-0 grid gap-2.5">
                 {c.links.map(l => (
                   <li key={l.label}>
-                    <a href={l.href} target={l.href.startsWith('/legal/') ? '_blank' : undefined} rel={l.href.startsWith('/legal/') ? 'noopener noreferrer' : undefined} className="hover:text-white transition-colors">{l.label}</a>
+                    <a href={l.href} className="hover:text-white transition-colors">{l.label}</a>
                   </li>
                 ))}
               </ul>
