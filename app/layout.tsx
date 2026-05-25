@@ -69,6 +69,7 @@ export const metadata: Metadata = {
     'weekend trips India', 'travel with strangers', 'Pondicherry', 'Ooty',
     'Manali', 'Varkala', 'Goa travel', 'smart travel', 'Tripknot'
   ],
+  applicationName: 'Tripknot',
   authors: [{ name: 'Tripknot', url: 'https://tripknot.in' }],
   creator: 'Tripknot',
   metadataBase: new URL('https://tripknot.in'),
