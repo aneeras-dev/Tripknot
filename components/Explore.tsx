@@ -3,11 +3,11 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const cats = [
-  { k: '2 nights',    t: 'Weekend trips',     img: '/images/weekend.JPG'  },
-  { k: 'Off the map', t: 'Hidden gems',       img: '/images/hidden.JPG'   },
-  { k: 'High altitude', t: 'Mountain escapes', img: '/images/mountains.JPG' },
-  { k: 'Coastal',     t: 'Beach destinations', img: '/images/beach.JPG'   },
-  { k: 'Heritage',    t: 'Spiritual journeys', img: '/images/spiritual.JPG' },
+  { k: '2 nights',    t: 'Weekend trips',     img: '/images/weekend.webp'  },
+  { k: 'Off the map', t: 'Hidden gems',       img: '/images/hidden.webp'   },
+  { k: 'High altitude', t: 'Mountain escapes', img: '/images/mountains.webp' },
+  { k: 'Coastal',     t: 'Beach destinations', img: '/images/beach.webp'   },
+  { k: 'Heritage',    t: 'Spiritual journeys', img: '/images/spiritual.webp' },
 ];
 
 export default function Explore() {

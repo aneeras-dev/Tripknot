@@ -7,19 +7,19 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const phones = [
   {
-    src: "/screens/screen-explore.png",
+    src: "/screens/screen-explore.webp",
     t: "Curated trips",
     s: "Join or get inspired",
     tall: false,
   },
   {
-    src: "/screens/screen-auroville.png",
+    src: "/screens/screen-auroville.webp",
     t: "Discover deeper",
     s: "Editorial place pages",
     tall: true,
   },
   {
-    src: "/screens/screen-temple.png",
+    src: "/screens/screen-temple.webp",
     t: "Nearby, right now",
     s: "What's interesting around you",
     tall: false,

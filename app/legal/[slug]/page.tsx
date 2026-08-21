@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { legalDocs, getLegalDoc, type ContentBlock } from '@/lib/legal-docs';
+import { pageMetadata } from '@/lib/seo';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -13,7 +14,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const doc = getLegalDoc(slug);
   if (!doc) return {};
-  return { title: doc.title, description: doc.description };
+  return pageMetadata({
+    title: doc.title,
+    description: doc.description,
+    path: `/legal/${slug}`,
+  });
 }
 
 function Block({ block }: { block: ContentBlock }) {

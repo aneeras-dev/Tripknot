@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Loader from '@/components/Loader';
 import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
@@ -10,6 +11,10 @@ import Destinations from '@/components/Destinations';
 import AppShowcase from '@/components/AppShowcase';
 import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
 
 export default function Page() {
   return (

@@ -1,11 +1,12 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import { legalDocs } from '@/lib/legal-docs';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'Legal',
   description: 'Privacy policy, terms of use, EULA, and other legal documents for Tripknot.',
-};
+  path: '/legal',
+});
 
 export default function LegalPage() {
   return (

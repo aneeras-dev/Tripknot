@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 import { SectionHead } from './Explore';
 
 const items = [
-  { span: 'lg:col-span-6', h: 'h-[360px]', k: 'Hidden gems', t: "Places you'd only know from someone local", img: '/images/hiddengem.JPG' },
-  { span: 'lg:col-span-3', h: 'h-[360px]', k: 'Stays', t: 'Best places to stay', img: '/images/stay.jpg' },
-  { span: 'lg:col-span-3', h: 'h-[360px]', k: 'Food', t: 'Cafes & street food', img: '/images/cafe.JPG' },
-  { span: 'lg:col-span-4', h: 'h-[280px]', k: 'Golden hour', t: 'Sunset spots', img: '/images/sunset.JPEG' },
-  { span: 'lg:col-span-4', h: 'h-[280px]', k: '2 night ideas', t: 'Weekend escapes', img: '/images/weekend.JPG' },
-  { span: 'lg:col-span-4', h: 'h-[280px]', k: 'Local culture', t: 'Experiences with people', img: '/images/local.JPG' }
+  { span: 'lg:col-span-6', h: 'h-[360px]', k: 'Hidden gems', t: "Places you'd only know from someone local", img: '/images/hiddengem.webp' },
+  { span: 'lg:col-span-3', h: 'h-[360px]', k: 'Stays', t: 'Best places to stay', img: '/images/stay.webp' },
+  { span: 'lg:col-span-3', h: 'h-[360px]', k: 'Food', t: 'Cafes & street food', img: '/images/cafe.webp' },
+  { span: 'lg:col-span-4', h: 'h-[280px]', k: 'Golden hour', t: 'Sunset spots', img: '/images/sunset.webp' },
+  { span: 'lg:col-span-4', h: 'h-[280px]', k: '2 night ideas', t: 'Weekend escapes', img: '/images/weekend.webp' },
+  { span: 'lg:col-span-4', h: 'h-[280px]', k: 'Local culture', t: 'Experiences with people', img: '/images/local.webp' }
 ];
 
 export default function ExperienceGrid() {

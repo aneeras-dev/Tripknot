@@ -38,10 +38,11 @@ export default function Footer() {
     {
       h: "Product",
       links: [
-        { label: "Itineraries", href: "#" },
-        { label: "Strangers Trip", href: "#" },
-        { label: "Hidden gems", href: "#" },
-        { label: "Mobile app", href: "#" },
+        { label: "Itineraries", href: "/#itinerary" },
+        { label: "Strangers Trip", href: "/#strangers" },
+        { label: "Hidden gems", href: "/#explore" },
+        { label: "Destinations", href: "/#destinations" },
+        { label: "Mobile app", href: "/#app" },
       ],
     },
     

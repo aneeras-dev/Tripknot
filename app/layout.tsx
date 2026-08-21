@@ -1,9 +1,11 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Bricolage_Grotesque, Figtree } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import SmoothScroll from '@/components/SmoothScroll';
 import Cursor from '@/components/Cursor';
+
+const APP_STORE_URL = 'https://apps.apple.com/in/app/tripknot/id6781707127';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -18,7 +20,8 @@ const jsonLd = {
         url: 'https://tripknot.in/tripknot-icon.png',
       },
       sameAs: [
-        'https://twitter.com/tripknotapp',
+        'https://www.instagram.com/tripknot.in',
+        'https://www.linkedin.com/company/tripknot/',
       ],
     },
     {
@@ -36,6 +39,8 @@ const jsonLd = {
       description: 'Smart itineraries, hidden gems, weekend escapes, and trips with like-minded travelers — all in one elegant app.',
       applicationCategory: 'TravelApplication',
       operatingSystem: 'iOS, Android',
+      installUrl: APP_STORE_URL,
+      downloadUrl: APP_STORE_URL,
       offers: {
         '@type': 'Offer',
         price: '0',
@@ -73,9 +78,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'Tripknot', url: 'https://tripknot.in' }],
   creator: 'Tripknot',
   metadataBase: new URL('https://tripknot.in'),
-  alternates: {
-    canonical: 'https://tripknot.in/',
-  },
   robots: {
     index: true,
     follow: true,
@@ -84,7 +86,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/tripknot-icon.png',
     shortcut: '/tripknot-icon.png',
-    apple: '/tripknot-icon.png',
+    apple: { url: '/apple-touch-icon.png', sizes: '180x180' },
   },
   openGraph: {
     title: 'Tripknot — Travel smarter. Experience more.',
@@ -96,8 +98,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/og-image.png',
-        width: 1200,
-        height: 630,
+        width: 2400,
+        height: 1200,
         alt: 'Tripknot — Travel smarter. Experience more.',
       },
     ],
@@ -109,8 +111,14 @@ export const metadata: Metadata = {
     description:
       'Smart itineraries, hidden gems, weekend escapes, and trips with like-minded travelers — all in one elegant app.',
     images: ['/og-image.png'],
-    creator: '@tripknotapp',
+    site: '@tripknot',
   },
+  manifest: '/manifest.webmanifest',
+};
+
+export const viewport: Viewport = {
+  themeColor: '#0D7A7B',
+  colorScheme: 'light',
 };
 
 const GTM_ID = 'GTM-NJSXTBFC';

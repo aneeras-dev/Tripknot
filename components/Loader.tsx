@@ -2,13 +2,29 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// Splash timings. The intro blocks the viewport, so it is deliberately short —
+// it counts against Largest Contentful Paint on every visit that plays it.
+const LOGO_AT = 900;
+const DONE_AT = 1800;
+
 export default function Loader() {
   const [showLogo, setShowLogo] = useState(false);
-  const [done, setDone] = useState(false);
+  const [done, setDone] = useState(true);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setShowLogo(true), 2800);
-    const t2 = setTimeout(() => setDone(true), 5200);
+    // Play once per browsing session, not on every internal navigation.
+    let seen = false;
+    try {
+      seen = sessionStorage.getItem('tk-splash') === '1';
+      sessionStorage.setItem('tk-splash', '1');
+    } catch {
+      // Private mode / blocked storage — fall through and play the intro.
+    }
+    if (seen || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    setDone(false);
+    const t1 = setTimeout(() => setShowLogo(true), LOGO_AT);
+    const t2 = setTimeout(() => setDone(true), DONE_AT);
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, []);
 
@@ -19,7 +35,7 @@ export default function Loader() {
           key="loader"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.7, ease: 'easeInOut' }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
           className="fixed inset-0 z-[9999] flex items-center justify-center"
           style={{ background: '#F6F4EF' }}
         >

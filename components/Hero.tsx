@@ -9,6 +9,13 @@ const fadeUp = {
   show: (i = 0) => ({ y: 0, opacity: 1, transition: { delay: 0.1 * i, duration: 0.9, ease: [0.22, 1, 0.36, 1] } })
 };
 
+// The <h1> is the LCP element. It slides but never fades, so it is painted at
+// full opacity in the server-rendered HTML instead of waiting for hydration.
+const slideUp = {
+  hidden: { y: 32, opacity: 1 },
+  show: (i = 0) => ({ y: 0, opacity: 1, transition: { delay: 0.1 * i, duration: 0.9, ease: [0.22, 1, 0.36, 1] } })
+};
+
 const CARD_SHADOW = '0 4px 32px rgba(11,16,15,0.10), 0 1px 3px rgba(11,16,15,0.06)';
 const PHONE_SHADOW = '0 48px 96px -20px rgba(11,16,15,0.48), 0 2px 0 rgba(255,255,255,0.05) inset';
 
@@ -35,7 +42,7 @@ export default function Hero() {
           Smart travel · for the curious
         </motion.div>
         <motion.h1
-          initial="hidden" animate="show" variants={fadeUp} custom={1}
+          initial="hidden" animate="show" variants={slideUp} custom={1}
           className="display mt-[14px] mb-[18px]"
           style={{ fontSize: 'clamp(48px,8.2vw,116px)' }}
         >
@@ -87,7 +94,7 @@ export default function Hero() {
             >
               <div className="relative w-full h-full rounded-[36px] overflow-hidden bg-black">
                 <span className="absolute top-[10px] left-1/2 -translate-x-1/2 w-[88px] h-[24px] bg-black rounded-[12px] z-[3]" />
-                <Image src="/screens/screen-ooty.png" alt="Tripknot app" fill priority sizes="272px" style={{ objectFit: 'cover' }} />
+                <Image src="/screens/screen-ooty.webp" alt="Tripknot app" fill priority sizes="272px" style={{ objectFit: 'cover' }} />
               </div>
             </motion.div>
           </div>
@@ -116,7 +123,7 @@ function FloatCard1() {
     <>
       <div className="flex items-center gap-3">
         <div className="w-[52px] h-[52px] rounded-[16px] flex-none relative overflow-hidden">
-          <Image src="/images/pondicherry.png" alt="Pondicherry" fill sizes="52px" className="object-cover" />
+          <Image src="/images/pondicherry.webp" alt="Pondicherry" fill sizes="52px" className="object-cover" />
         </div>
         <div>
           <div className="font-semibold text-[14.5px] leading-snug">Pondicherry Heritage Walk</div>
@@ -148,7 +155,7 @@ function FloatCard2() {
       <div className="font-semibold text-[16px] leading-snug">Sunset at Promenade</div>
       <div className="text-[12px] text-muted mt-1 mb-3 leading-relaxed">Walk along Rock Beach — best between 5–6pm</div>
       <div className="flex gap-2">
-        {['/images/itinenary/promenade.jpeg', '/images/itinenary/rockbeach.jpg', '/images/beach.JPG'].map((src, i) => (
+        {['/images/itinenary/promenade.webp', '/images/itinenary/rockbeach.webp', '/images/beach.webp'].map((src, i) => (
           <div key={i} className="h-[44px] flex-1 rounded-[10px] relative overflow-hidden">
             <Image src={src} alt="" fill sizes="80px" className="object-cover" />
           </div>
@@ -169,7 +176,7 @@ function FloatCard3() {
         <div className="flex items-center">
           {[1, 2, 3].map((n, k) => (
             <div key={n} className={`w-7 h-7 rounded-full border-2 border-white overflow-hidden relative flex-shrink-0 ${k ? '-ml-2' : ''}`}>
-              <Image src={`/images/profile/profile-${n}.png`} alt="" fill sizes="28px" className="object-cover" />
+              <Image src={`/images/profile/profile-${n}.webp`} alt="" fill sizes="28px" className="object-cover" />
             </div>
           ))}
         </div>

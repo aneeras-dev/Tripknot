@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 import { useRef } from 'react';
 
 const dests = [
-  { idx: '01 · Tamil Nadu', t: 'Pondicherry', s: 'French quarter walks, sea wind and slow filter coffee.', pin: 'Coastal · Editorial', img: '/images/pondicherry.png' },
-  { idx: '02 · Nilgiris', t: 'Ooty', s: 'Tea gardens folding into the clouds, colonial bungalows.', pin: 'Hills · Misty', img: '/images/ooty.jpg' },
-  { idx: '03 · West coast', t: 'Goa', s: 'Quiet north shacks, Portuguese lanes, sunset feni.', pin: 'Sun · Sand', img: '/images/goa.jpg' },
-  { idx: '04 · Himachal', t: 'Manali', s: 'Pine valleys, Solang nights, Beas-river breakfasts.', pin: 'Alpine · Snow', img: '/images/manali-atel.JPG' },
-  { idx: '05 · Rajasthan', t: 'Jaipur', s: 'Forts at dawn, bazaar afternoons, courtyard suppers.', pin: 'Heritage · Pink', img: '/images/jaipur.JPG' },
-  { idx: '06 · Kerala', t: 'Varkala', s: 'Red-laterite cliffs over the Arabian sea — endless mornings.', pin: 'Cliffside · Quiet', img: '/images/varkala-jatyu.JPG' }
+  { idx: '01 · Tamil Nadu', t: 'Pondicherry', s: 'French quarter walks, sea wind and slow filter coffee.', pin: 'Coastal · Editorial', img: '/images/pondicherry.webp' },
+  { idx: '02 · Nilgiris', t: 'Ooty', s: 'Tea gardens folding into the clouds, colonial bungalows.', pin: 'Hills · Misty', img: '/images/ooty.webp' },
+  { idx: '03 · West coast', t: 'Goa', s: 'Quiet north shacks, Portuguese lanes, sunset feni.', pin: 'Sun · Sand', img: '/images/goa.webp' },
+  { idx: '04 · Himachal', t: 'Manali', s: 'Pine valleys, Solang nights, Beas-river breakfasts.', pin: 'Alpine · Snow', img: '/images/manali-atel.webp' },
+  { idx: '05 · Rajasthan', t: 'Jaipur', s: 'Forts at dawn, bazaar afternoons, courtyard suppers.', pin: 'Heritage · Pink', img: '/images/jaipur.webp' },
+  { idx: '06 · Kerala', t: 'Varkala', s: 'Red-laterite cliffs over the Arabian sea — endless mornings.', pin: 'Cliffside · Quiet', img: '/images/varkala-jatyu.webp' }
 ];
 
 export default function Destinations() {

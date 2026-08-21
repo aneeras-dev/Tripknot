@@ -20,7 +20,7 @@ function TripCardInner({ t }: { t: Trip }) {
         <div className="flex items-center">
           {t.profiles.map((n, k) => (
             <div key={k} className={`w-[30px] h-[30px] rounded-full overflow-hidden flex-shrink-0 relative ${k ? '-ml-2' : ''}`} style={{ border: `2px solid ${t.bg}` }}>
-              <Image src={`/images/profile/profile-${n}.png`} alt={`traveler ${n}`} fill className="object-cover" sizes="30px" />
+              <Image src={`/images/profile/profile-${n}.webp`} alt={`traveler ${n}`} fill className="object-cover" sizes="30px" />
             </div>
           ))}
         </div>
@@ -31,9 +31,9 @@ function TripCardInner({ t }: { t: Trip }) {
 }
 
 const trips = [
-  { city: 'Manali', days: '5 days', title: 'Snowline Trekkers', meta: 'Jun 8 · Departs Bangalore', rating: '★ 4.8', img: '/images/manali.JPG', bg: '#161B1A', off: -58, rot: -4, profiles: [1, 2, 3, 4] },
-  { city: 'Hampi', days: '3 days', title: 'Sunsets & Boulders', meta: 'Jul 12 · 6 of 8 spots filled', rating: '★ 4.9', img: '/images/hampi.jpg', bg: '#1B2625', off: -46, rot: 2, profiles: [5, 6, 7, 8] },
-  { city: 'Varkala', days: '4 days', title: 'Cliffside Slow Days', meta: 'Aug 20 · 3 spots left', rating: '★ 4.7', img: '/images/varkala.jpg', bg: '#212C2B', off: -50, rot: -1, profiles: [9, 10, 11, 12] }
+  { city: 'Manali', days: '5 days', title: 'Snowline Trekkers', meta: 'Jun 8 · Departs Bangalore', rating: '★ 4.8', img: '/images/manali.webp', bg: '#161B1A', off: -58, rot: -4, profiles: [1, 2, 3, 4] },
+  { city: 'Hampi', days: '3 days', title: 'Sunsets & Boulders', meta: 'Jul 12 · 6 of 8 spots filled', rating: '★ 4.9', img: '/images/hampi.webp', bg: '#1B2625', off: -46, rot: 2, profiles: [5, 6, 7, 8] },
+  { city: 'Varkala', days: '4 days', title: 'Cliffside Slow Days', meta: 'Aug 20 · 3 spots left', rating: '★ 4.7', img: '/images/varkala.webp', bg: '#212C2B', off: -50, rot: -1, profiles: [9, 10, 11, 12] }
 ];
 
 export default function Strangers() {

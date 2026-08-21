@@ -1,12 +1,13 @@
 'use client';
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useMagnetic } from '@/lib/useReveal';
-import EarlyAccessModal from './EarlyAccessModal';
+import ComingSoonModal from './ComingSoonModal';
+
+const BADGE_BOX = 'flex items-center justify-center w-[190px] h-[56px] rounded-[9px] overflow-hidden transition-shadow duration-300';
 
 export default function FinalCTA() {
-  const cta = useMagnetic<HTMLButtonElement>(0.3);
-  const [modalOpen, setModalOpen] = useState(false);
+  const [comingSoon, setComingSoon] = useState(false);
 
   return (
     <>
@@ -22,23 +23,34 @@ export default function FinalCTA() {
             <div className="eyebrow" style={{ color: '#0D7A7B' }}>Your next journey</div>
             <h2 className="font-display font-semibold tracking-[-0.035em] leading-[0.98] m-0 mb-5" style={{ fontSize: 'clamp(48px,7vw,108px)', color: 'var(--ink)' }}>Your next journey<br />starts here.</h2>
             <p className="text-[19px] max-w-[560px] mx-auto leading-[1.5] mb-9" style={{ color: '#6B6B66' }}>Discover destinations, generate trips, and experience travel differently with Tripknot.</p>
-            <div className="flex gap-3.5 justify-center flex-wrap">
-              <button
-                ref={cta}
-                type="button"
-                className="btn btn-primary btn-lg"
-                style={{ background: 'var(--ink)', color: '#fff' }}
-                onClick={() => setModalOpen(true)}
+
+            <div className="flex gap-6 justify-center items-center flex-wrap">
+              <a
+                href="https://apps.apple.com/in/app/tripknot/id6781707127"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download Tripknot on the App Store"
+                className={`${BADGE_BOX} hover:shadow-[0_16px_36px_rgba(0,0,0,0.22)]`}
+                style={{ background: '#000', boxShadow: '0 8px 24px rgba(0,0,0,0.14)' }}
               >
-                Join early access
-                <svg width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                <Image src="/appstore.svg" alt="Download on the App Store" width={190} height={56} unoptimized className="block h-full w-auto" />
+              </a>
+
+              <button
+                type="button"
+                onClick={() => setComingSoon(true)}
+                aria-label="Tripknot for Android — arriving soon on Google Play"
+                className={`${BADGE_BOX} hover:shadow-[0_16px_36px_rgba(0,0,0,0.18)]`}
+                style={{ background: '#fff', border: '1px solid rgba(13,13,13,0.10)', boxShadow: '0 8px 24px rgba(0,0,0,0.10)' }}
+              >
+                <Image src="/playstore.svg" alt="Get it on Google Play" width={190} height={56} unoptimized className="block h-full w-auto" />
               </button>
             </div>
           </motion.div>
         </div>
       </section>
 
-      <EarlyAccessModal open={modalOpen} onClose={() => setModalOpen(false)} />
+      <ComingSoonModal open={comingSoon} onClose={() => setComingSoon(false)} />
     </>
   );
 }
