@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 export const SITE_URL = 'https://tripknot.in';
 export const APP_STORE_URL = 'https://apps.apple.com/in/app/tripknot/id6781707127';
+export const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.tripknot.app';
 
 /**
  * Builds per-route metadata with a correct canonical + Open Graph URL.

@@ -1,14 +1,11 @@
 'use client';
-import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import ComingSoonModal from './ComingSoonModal';
+import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/seo';
 
 const BADGE_BOX = 'flex items-center justify-center w-[190px] h-[56px] rounded-[9px] overflow-hidden transition-shadow duration-300';
 
 export default function FinalCTA() {
-  const [comingSoon, setComingSoon] = useState(false);
-
   return (
     <>
       <section id="cta" className="text-center relative overflow-hidden py-[160px]" style={{ background: 'linear-gradient(160deg,#EEF8F8 0%,#FAF7F2 45%,#FDF1E8 100%)' }} data-screen-label="Final CTA">
@@ -26,7 +23,7 @@ export default function FinalCTA() {
 
             <div className="flex gap-6 justify-center items-center flex-wrap">
               <a
-                href="https://apps.apple.com/in/app/tripknot/id6781707127"
+                href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Download Tripknot on the App Store"
@@ -36,21 +33,20 @@ export default function FinalCTA() {
                 <Image src="/appstore.svg" alt="Download on the App Store" width={190} height={56} unoptimized className="block h-full w-auto" />
               </a>
 
-              <button
-                type="button"
-                onClick={() => setComingSoon(true)}
-                aria-label="Tripknot for Android — arriving soon on Google Play"
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get Tripknot on Google Play"
                 className={`${BADGE_BOX} hover:shadow-[0_16px_36px_rgba(0,0,0,0.18)]`}
                 style={{ background: '#fff', border: '1px solid rgba(13,13,13,0.10)', boxShadow: '0 8px 24px rgba(0,0,0,0.10)' }}
               >
                 <Image src="/playstore.svg" alt="Get it on Google Play" width={190} height={56} unoptimized className="block h-full w-auto" />
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>
       </section>
-
-      <ComingSoonModal open={comingSoon} onClose={() => setComingSoon(false)} />
     </>
   );
 }

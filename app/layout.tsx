@@ -6,6 +6,7 @@ import SmoothScroll from '@/components/SmoothScroll';
 import Cursor from '@/components/Cursor';
 
 const APP_STORE_URL = 'https://apps.apple.com/in/app/tripknot/id6781707127';
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.tripknot.app';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -22,6 +23,8 @@ const jsonLd = {
       sameAs: [
         'https://www.instagram.com/tripknot.in',
         'https://www.linkedin.com/company/tripknot/',
+        APP_STORE_URL,
+        PLAY_STORE_URL,
       ],
     },
     {
@@ -39,8 +42,8 @@ const jsonLd = {
       description: 'Smart itineraries, hidden gems, weekend escapes, and trips with like-minded travelers — all in one elegant app.',
       applicationCategory: 'TravelApplication',
       operatingSystem: 'iOS, Android',
-      installUrl: APP_STORE_URL,
-      downloadUrl: APP_STORE_URL,
+      installUrl: [APP_STORE_URL, PLAY_STORE_URL],
+      downloadUrl: [APP_STORE_URL, PLAY_STORE_URL],
       offers: {
         '@type': 'Offer',
         price: '0',
