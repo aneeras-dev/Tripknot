@@ -25,6 +25,9 @@ export type ShareView = {
   /** Absolute image URL, or undefined to fall back to the site OG card. */
   image?: string;
   facts: ShareFact[];
+  /** Trip only — its dates have passed / it's marked completed. The page still
+   *  renders, but as a "this already happened" state with no join intent. */
+  past?: boolean;
 };
 
 const API = TRIPKNOT_API_URL.replace(/\/$/, '');
@@ -89,6 +92,7 @@ type TripPreview = {
   total_spots: number;
   spots_remaining: number;
   creator_name?: string | null;
+  status?: string;
 };
 
 type PlaceDetail = {
@@ -155,20 +159,32 @@ async function loadTrip(id: string): Promise<ShareView | null> {
   const start = fmtDate(t.start_date);
   const end = fmtDate(t.end_date);
   const dates = start && end ? `${start} – ${end}` : start ?? undefined;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const endDate = t.end_date ? new Date(t.end_date) : null;
+  const past =
+    t.status === 'completed' ||
+    (endDate !== null && !Number.isNaN(endDate.getTime()) && endDate < today);
+
   return {
     kind: 'trip',
     deepLinkPath: `find-people/${id}`,
     webPath: `/t/${id}`,
+    past,
     title: t.title,
     subtitle: [t.destination, dates].filter(Boolean).join(' · ') || undefined,
     description:
       t.description?.slice(0, 200) ||
-      `Join this ${t.total_days}-day group trip on TripKnot.`,
+      `${past ? 'A' : 'Join this'} ${t.total_days}-day group trip on TripKnot.`,
     image: absImage(t.cover_photo_url ?? t.photos?.[0]),
     facts: [
       ...(t.destination ? [{ label: 'Destination', value: t.destination }] : []),
       ...(dates ? [{ label: 'Dates', value: dates }] : []),
-      { label: 'Spots left', value: `${t.spots_remaining} of ${t.total_spots}` },
+      // "spots left" is meaningless once the trip is over
+      ...(past
+        ? []
+        : [{ label: 'Spots left', value: `${t.spots_remaining} of ${t.total_spots}` }]),
       ...(t.creator_name ? [{ label: 'Hosted by', value: t.creator_name }] : []),
     ],
   };

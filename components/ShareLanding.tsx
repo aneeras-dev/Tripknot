@@ -22,6 +22,12 @@ export default function ShareLanding({ view }: { view: ShareView }) {
             <p className="text-[16px] md:text-[18px] text-muted mb-8">{view.subtitle}</p>
           )}
 
+          {view.past && (
+            <div className="mb-8 rounded-xl border border-ink/[0.08] bg-bg2 px-4 py-3 text-[14px] text-muted">
+              This trip has already taken place.
+            </div>
+          )}
+
           {view.image && (
             <div className="relative mb-10 aspect-[16/10] w-full overflow-hidden rounded-2xl bg-bg2">
               <Image
@@ -48,7 +54,7 @@ export default function ShareLanding({ view }: { view: ShareView }) {
             </dl>
           )}
 
-          <SmartAppCta deepLinkPath={view.deepLinkPath} />
+          <SmartAppCta deepLinkPath={view.deepLinkPath} past={view.past} />
 
           <div className="mt-16 border-t border-ink/[0.08] pt-8 text-center">
             <Link
