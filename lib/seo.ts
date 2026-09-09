@@ -4,16 +4,6 @@ export const SITE_URL = 'https://tripknot.in';
 export const APP_STORE_URL = 'https://apps.apple.com/in/app/tripknot/id6781707127';
 export const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.tripknot.app';
 
-/** App custom URL scheme — used by the "Open in app" button on share landing pages. */
-export const APP_SCHEME = 'tripknotapp';
-
-/**
- * Base URL of the TripKnot backend API (e.g. https://…run.app/api/v1).
- * Server-only — set in the Vercel project env. Share landing pages read it in
- * `generateMetadata` / server components to build OpenGraph previews.
- */
-export const TRIPKNOT_API_URL = process.env.TRIPKNOT_API_URL ?? '';
-
 /**
  * Builds per-route metadata with a correct canonical + Open Graph URL.
  *
