@@ -26,7 +26,14 @@ const BADGE_BOX =
  * off to the app before this page renders when the app is installed; this page is
  * the fallback for everyone else.
  */
-export default function SmartAppCta({ deepLinkPath }: { deepLinkPath: string }) {
+export default function SmartAppCta({
+  deepLinkPath,
+  past = false,
+}: {
+  deepLinkPath: string;
+  /** Past/completed trip — drop the join-oriented "Open in app" button. */
+  past?: boolean;
+}) {
   const [platform, setPlatform] = useState<Platform>('other');
   useEffect(() => setPlatform(detectPlatform()), []);
 
@@ -64,12 +71,16 @@ export default function SmartAppCta({ deepLinkPath }: { deepLinkPath: string }) 
 
   return (
     <div className="flex flex-col items-center gap-5">
-      <a href={appLink} className="btn btn-primary btn-lg">
-        Open in the TripKnot app
-      </a>
+      {!past && (
+        <a href={appLink} className="btn btn-primary btn-lg">
+          Open in the TripKnot app
+        </a>
+      )}
       <div className="flex flex-wrap items-center justify-center gap-4">{badges}</div>
       <p className="text-[13px] text-muted">
-        Don&apos;t have the app? Install it, then open this link again.
+        {past
+          ? 'Get TripKnot to find and join trips like this one.'
+          : "Don't have the app? Install it, then open this link again."}
       </p>
     </div>
   );
