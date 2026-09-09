@@ -6,8 +6,12 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: 'Tripknot',
     description:
       'Smart itineraries, hidden gems, weekend escapes, and trips with like-minded travelers — all in one elegant app.',
+    // 'browser' (not 'standalone') so Chrome on Android does NOT treat the
+    // marketing site as an installable PWA and stop popping the "Install app"
+    // prompt over share links. The site's job is to send people to the native
+    // app stores, not to be installed itself.
     start_url: '/',
-    display: 'standalone',
+    display: 'browser',
     background_color: '#FAF7F2',
     theme_color: '#0D7A7B',
     icons: [
